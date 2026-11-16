@@ -1,4 +1,4 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#14535C"><meta name="robots" content="noindex"><title>협찬 고르기</title><style>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#14535C"><meta name="robots" content="noindex"><title>협찬 고르기</title><script src="https://telegram.org/js/telegram-web-app.js"></script><style>
 :root{--t:#14535C;--p:#FFB7C9;--c:#FFF8EE;--line:#eadfcf;--mut:#6b7280}*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 body{margin:0;font:15px/1.45 -apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;background:var(--c);color:#1f2328;padding-bottom:calc(76px + env(safe-area-inset-bottom))}
 header{position:sticky;top:0;z-index:5;background:var(--t);color:#fff;padding:calc(10px + env(safe-area-inset-top)) 12px 10px}
@@ -26,7 +26,7 @@ header{position:sticky;top:0;z-index:5;background:var(--t);color:#fff;padding:ca
 .note{font-size:12.5px;color:var(--mut)}.empty{text-align:center;color:var(--mut);padding:40px 10px}.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);background:#111;color:#fff;padding:9px 16px;border-radius:10px;font-size:13.5px;display:none;z-index:10;max-width:90%}
 .big{width:100%;border:0;border-radius:10px;padding:12px;font-weight:800;font-size:15px;margin-top:8px}
 </style></head><body>
-<header><div class="hrow"><h1>협찬 고르기<small id="upd"></small></h1><button class="hbtn" id="mng">가리기 관리</button></div><div class="tabs" id="tabs"></div></header>
+<header><div class="hrow"><h1>협찬 고르기<small id="upd"></small><small id="sv"></small></h1><button class="hbtn" id="mng">가리기 관리</button></div><div class="tabs" id="tabs"></div></header>
 <div class="tools"><div class="srow"><input id="q" type="search" placeholder="뭘 받는지·가게 이름 검색"><select id="sort"><option value="d">마감 빠른 순</option><option value="k">경쟁 낮은 순</option><option value="n">새로 올라온 순</option></select></div><div class="chips" id="ch"></div></div>
 <div class="sum"><span id="sum"></span><span id="hid"></span></div><main id="m"><div class="empty">불러오는 중…</div></main>
 <div class="bar"><div class="cnt">담은 것 <b id="n">0</b>개</div><button class="btn-l" id="see">보기</button><button class="btn-p" id="cp">신청 목록 보내기</button></div>
@@ -34,6 +34,14 @@ header{position:sticky;top:0;z-index:5;background:var(--t);color:#fff;padding:ca
 <script>
 const $=id=>document.getElementById(id);const ls={get:(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},set:(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 let D=[],META={},hide=new Set(ls.get('hc_hide',[])),pick=new Set(ls.get('hc_pick',[])),kws=ls.get('hc_kw',[]);
+const TW=window.Telegram&&Telegram.WebApp;const CLOUD=!!(TW&&TW.initData&&TW.CloudStorage&&(!TW.isVersionAtLeast||TW.isVersionAtLeast('6.9')));
+try{if(TW){TW.ready();TW.expand()}}catch(e){}try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
+const cGet=keys=>new Promise(r=>{try{TW.CloudStorage.getItems(keys,(e,v)=>r(e?null:v))}catch(e){r(null)}});
+const cSet=(k,v)=>new Promise(r=>{try{TW.CloudStorage.setItem(k,v,(e)=>r(!e))}catch(e){r(false)}});
+async function cloudSave(name,val){const s=JSON.stringify(val);const parts=[];for(let i=0;i<s.length;i+=3500)parts.push(s.slice(i,i+3500));for(let i=0;i<parts.length;i++)await cSet(name+'_'+i,parts[i]);await cSet(name+'_n',String(parts.length))}
+async function cloudLoad(name){const n=await cGet([name+'_n']);if(!n||!n[name+'_n'])return null;const cnt=+n[name+'_n'];const keys=[...Array(cnt)].map((_,i)=>name+'_'+i);const v=await cGet(keys);if(!v)return null;try{return JSON.parse(keys.map(k=>v[k]||'').join(''))}catch(e){return null}}
+let saveT=null;function persist(){ls.set('hc_hide',[...hide]);ls.set('hc_pick',[...pick]);ls.set('hc_kw',kws);if(!CLOUD)return;clearTimeout(saveT);saveT=setTimeout(async()=>{await cloudSave('hide',[...hide]);await cloudSave('pick',[...pick]);await cloudSave('kw',kws);const x=document.getElementById('sv');if(x){x.textContent='저장됨';setTimeout(()=>x.textContent='',1200)}},500)}
+async function cloudInit(){if(!CLOUD)return;const [h2,p2,k2]=[await cloudLoad('hide'),await cloudLoad('pick'),await cloudLoad('kw')];if(h2||p2||k2){if(h2)h2.forEach(x=>hide.add(x));if(p2)p2.forEach(x=>pick.add(x));if(k2)k2.forEach(x=>{if(!kws.includes(x))kws.push(x)})}persist()}
 const T=[['C','창원 주말 가능'],['U','창원 주말 확인 필요'],['N','창원 평일만'],['S','배송 제품'],['P','페이백·구매'],['K','기자단·재택']];
 let st={g:'C',chip:'전체',q:'',sort:'d'};const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const kst=()=>new Date(Date.now()+9*3600e3).toISOString().slice(0,10);let today=kst(),tom=new Date(Date.now()+33*3600e3).toISOString().slice(0,10);
@@ -58,21 +66,21 @@ function toast(t){const x=$('to');x.textContent=t;x.style.display='block';clearT
 function picked(){return D.filter(d=>pick.has(d.k)&&live(d))}
 function text(){const L=picked();return'신청해줘 ('+L.length+'개)\n'+L.map((d,i)=>(i+1)+'. '+d.n+' ('+d.t+') ['+d.s+'] '+d.u).join('\n')}
 function sheetPick(){const L=picked();$('shc').innerHTML='<h3>담은 것 '+L.length+'개</h3>'+(L.length?L.map(d=>'<div class="li"><span>'+esc(d.n)+'<br><small>'+esc(d.t)+' · '+d.s+' · '+md(d.e)+' 마감</small></span><button data-unpick="'+esc(d.k)+'">빼기</button></div>').join(''):'<div class="empty">아직 담은 게 없어요</div>')+'<button class="big btn-p" id="send">텔레그램으로 보내기</button><button class="big btn-l" id="copy">복사만 하기</button><button class="big btn-l" id="clrp">담은 것 비우기</button><p class="note">보내기를 누르면 텔레그램이 열려요. 블로그 봇(Blog4451bot) 대화방을 골라 보내 주시면 돼요.</p>';$('sh').classList.add('on')}
-function sheetMng(){const H=D.filter(d=>live(d)&&hide.has(d.k));$('shc').innerHTML='<h3>단어로 가리기</h3><p class="note">이 단어가 이름에 들어간 건 지금 있는 것도, 내일 새로 올라오는 것도 다 가려져요.</p><div class="kwrow"><input id="kwi" placeholder="예: 소개팅, 웨딩"><button id="kwa">추가</button></div><div class="kws">'+kws.map((k,i)=>'<span class="kw">'+esc(k)+'<button data-kwdel="'+i+'">✕</button></span>').join('')+'</div><h3 style="margin-top:16px">하나씩 가린 것 '+H.length+'개</h3>'+(H.length?H.map(d=>'<div class="li"><span>'+esc(d.n)+'<br><small>'+esc(d.t)+' · '+d.s+'</small></span><button data-unhide="'+esc(d.k)+'">다시 보기</button></div>').join(''):'<div class="note">아직 없어요. 카드의 가리기를 누르면 여기 모여요.</div>')+'<p class="note" style="margin-top:14px">가리기는 이 폰(브라우저)에 저장돼요. 매일 목록이 새로 바뀌어도 그대로 유지돼요.</p>';$('sh').classList.add('on')}
+function sheetMng(){const H=D.filter(d=>live(d)&&hide.has(d.k));$('shc').innerHTML='<h3>단어로 가리기</h3><p class="note">이 단어가 이름에 들어간 건 지금 있는 것도, 내일 새로 올라오는 것도 다 가려져요.</p><div class="kwrow"><input id="kwi" placeholder="예: 소개팅, 웨딩"><button id="kwa">추가</button></div><div class="kws">'+kws.map((k,i)=>'<span class="kw">'+esc(k)+'<button data-kwdel="'+i+'">✕</button></span>').join('')+'</div><h3 style="margin-top:16px">하나씩 가린 것 '+H.length+'개</h3>'+(H.length?H.map(d=>'<div class="li"><span>'+esc(d.n)+'<br><small>'+esc(d.t)+' · '+d.s+'</small></span><button data-unhide="'+esc(d.k)+'">다시 보기</button></div>').join(''):'<div class="note">아직 없어요. 카드의 가리기를 누르면 여기 모여요.</div>')+'<p class="note" style="margin-top:14px">'+(CLOUD?'텔레그램 계정에 저장돼요. 껐다 켜도, 폰을 바꿔도, 매일 목록이 바뀌어도 그대로예요.':'지금은 이 브라우저에만 저장돼요. 텔레그램 봇의 <b>협찬 고르기</b> 버튼으로 열면 텔레그램 계정에 저장돼서 안 날아가요.')+'</p>';$('sh').classList.add('on')}
 async function copy(t){try{await navigator.clipboard.writeText(t);return true}catch(e){const a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();let ok=false;try{ok=document.execCommand('copy')}catch(_){}a.remove();return ok}}
 document.addEventListener('click',async e=>{const t=e.target;
  if(t.closest('.tab')){st.g=t.closest('.tab').dataset.g;st.chip='전체';draw();scrollTo(0,0);return}
  if(t.closest('.chip')){st.chip=t.closest('.chip').dataset.c;draw();return}
- const c=t.closest('.card');if(c&&t.classList.contains('add')){const k=c.dataset.k;pick.has(k)?pick.delete(k):pick.add(k);ls.set('hc_pick',[...pick]);c.classList.toggle('sel',pick.has(k));t.textContent=pick.has(k)?'담음':'담기';$('n').textContent=picked().length;return}
- if(c&&t.classList.contains('hide')){const k=c.dataset.k;hide.add(k);pick.delete(k);ls.set('hc_hide',[...hide]);ls.set('hc_pick',[...pick]);c.style.display='none';toast('가렸어요. 위의 가리기 관리에서 되돌릴 수 있어요');draw();return}
- if(t.dataset.unpick){pick.delete(t.dataset.unpick);ls.set('hc_pick',[...pick]);sheetPick();draw();return}
- if(t.dataset.unhide){hide.delete(t.dataset.unhide);ls.set('hc_hide',[...hide]);sheetMng();draw();return}
- if(t.dataset.kwdel!=null){kws.splice(+t.dataset.kwdel,1);ls.set('hc_kw',kws);sheetMng();draw();return}
+ const c=t.closest('.card');if(c&&t.classList.contains('add')){const k=c.dataset.k;pick.has(k)?pick.delete(k):pick.add(k);persist();c.classList.toggle('sel',pick.has(k));t.textContent=pick.has(k)?'담음':'담기';$('n').textContent=picked().length;return}
+ if(c&&t.classList.contains('hide')){const k=c.dataset.k;hide.add(k);pick.delete(k);persist();persist();c.style.display='none';toast('가렸어요. 위의 가리기 관리에서 되돌릴 수 있어요');draw();return}
+ if(t.dataset.unpick){pick.delete(t.dataset.unpick);persist();sheetPick();draw();return}
+ if(t.dataset.unhide){hide.delete(t.dataset.unhide);persist();sheetMng();draw();return}
+ if(t.dataset.kwdel!=null){kws.splice(+t.dataset.kwdel,1);persist();sheetMng();draw();return}
  if(t.id==='kwa'){const v=$('kwi').value.trim();if(v&&!kws.includes(v)){kws.push(v);ls.set('hc_kw',kws)}sheetMng();draw();return}
- if(t.id==='send'){const L=picked();if(!L.length){toast('먼저 담아 주세요');return}const tx=text();await copy(tx);location.href='https://t.me/share/url?url='+encodeURIComponent('https://t.me/Blog4451bot')+'&text='+encodeURIComponent(tx);return}
+ if(t.id==='send'){const L=picked();if(!L.length){toast('먼저 담아 주세요');return}const tx=text();await copy(tx);const sh='https://t.me/share/url?url='+encodeURIComponent('https://t.me/Blog4451bot')+'&text='+encodeURIComponent(tx);if(TW&&TW.openTelegramLink&&CLOUD){TW.openTelegramLink(sh)}else{location.href=sh}return}
  if(t.id==='copy'){if(!picked().length){toast('먼저 담아 주세요');return}toast(await copy(text())?'복사했어요':'복사가 안 됐어요');return}
- if(t.id==='clrp'){if(confirm('담은 것을 비울까요?')){pick.clear();ls.set('hc_pick',[]);sheetPick();draw()}return}
+ if(t.id==='clrp'){if(confirm('담은 것을 비울까요?')){pick.clear();persist();sheetPick();draw()}return}
  if(t.id==='sh'){$('sh').classList.remove('on')}});
 $('q').oninput=e=>{st.q=e.target.value;draw()};$('sort').onchange=e=>{st.sort=e.target.value;draw()};$('see').onclick=sheetPick;$('cp').onclick=sheetPick;$('mng').onclick=sheetMng;
-fetch('data.json?v='+Date.now()).then(r=>r.json()).then(j=>{D=j.items;META=j;$('upd').textContent=j.date.slice(5).replace('-','/')+' '+(j.time||'')+' 업데이트';draw()}).catch(e=>{$('m').innerHTML='<div class="empty">목록을 못 불러왔어요. 잠시 뒤 새로고침해 주세요.</div>'});
+cloudInit().then(()=>fetch('data.json?v='+Date.now())).then(r=>r.json()).then(j=>{D=j.items;META=j;$('upd').textContent=j.date.slice(5).replace('-','/')+' '+(j.time||'')+' 업데이트';draw()}).catch(e=>{$('m').innerHTML='<div class="empty">목록을 못 불러왔어요. 잠시 뒤 새로고침해 주세요.</div>'});
 </script></body></html>
