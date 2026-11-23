@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23 19:42",
+ "updated": "2026-11-23 20:35",
  "rules": {
   "visitApplyPerWeek": 3,
   "visitConfirmPerWeek": 2,
@@ -73,7 +73,8 @@
    "note": "리뷰 등록 완료 11/16, 결과 12/3",
    "u": "https://blog.naver.com/why_do_we_study/224476937793",
    "ks": [],
-   "res": "2026-12-03"
+   "res": "2026-12-03",
+   "post": "https://blog.naver.com/why_do_we_study/224476937793"
   },
   {
    "s": "레뷰",
@@ -693,7 +694,8 @@
    "note": "백운박사철학원 · 성산구 · 리뷰 등록 완료 11/22 (https://blog.naver.com/why_do_we_study/224486330760), 결과 12/11",
    "todo": "6개월 유지",
    "visit": "2026-11-21",
-   "res": "2026-12-11"
+   "res": "2026-12-11",
+   "post": "https://blog.naver.com/why_do_we_study/224486330760"
   },
   {
    "s": "강남",
@@ -727,7 +729,8 @@
    "note": "815족발 · 마산회원구 · 리뷰 등록 완료 11/23 (https://blog.naver.com/why_do_we_study/224488395282), 결과 12/11",
    "todo": "6개월 유지",
    "visit": "2026-11-23",
-   "res": "2026-12-11"
+   "res": "2026-12-11",
+   "post": "https://blog.naver.com/why_do_we_study/224488395282"
   },
   {
    "s": "강남",
