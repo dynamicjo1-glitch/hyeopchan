@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26 00:23",
+ "updated": "2026-11-26 07:44",
  "rules": {
   "visitApplyPerWeek": 3,
   "visitConfirmPerWeek": 2,
@@ -1930,6 +1930,6 @@
    "t": "부부 일정"
   }
  ],
- "synced": "2026-11-26 00:23",
- "syncNote": "리뷰노트·레뷰·강남·디너 모두 사이트 기준 확인(11/25 17:32)"
+ "synced": "2026-11-26 07:33",
+ "syncNote": "2026-11-26 07:33 아침 동기화: 리뷰노트 applyChecks 82(APPLIED 77·APPROVED 3·COMPLETED 2), 레뷰 신청중 3·선정 1·미선정 73, 디너 신청 14·선정 0, 강남 달력 10·신청 목록 6 모두 status와 일치"
 }
