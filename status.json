@@ -55,13 +55,16 @@
    "s": "리뷰노트",
    "n": "Proton VPN Plus 1개월",
    "type": "배송",
-   "state": "확정",
+   "state": "완료",
    "due": "2026-11-27",
-   "todo": "11/22까지 원고를 담당자에게 보내 검수받고 발행",
+   "todo": "6개월 유지",
    "u": "https://www.reviewnote.co.kr/campaigns/1523998",
    "ks": [
     "리뷰노트:1523998"
-   ]
+   ],
+   "done": "2026-11-26",
+   "post": "https://blog.naver.com/why_do_we_study/224481268355",
+   "note": "11/26 검수 없이 공개·리뷰노트 등록(미션 검수 통과). 링크는 상품정보 URL protonvpn.com/ko/pricing"
   },
   {
    "s": "강남",
