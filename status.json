@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-28 09:38",
+ "updated": "2026-11-28 22:35",
  "rules": {
   "visitApplyPerWeek": 3,
   "visitConfirmPerWeek": 2,
@@ -1414,7 +1414,7 @@
    "type": "배송",
    "state": "발표전",
    "applied": "2026-11-26",
-   "ann": "2026-11-27",
+   "ann": "2026-12-01",
    "due": "2026-12-13",
    "u": "https://www.reviewplace.co.kr/pr/?id=322577",
    "ks": [
@@ -1428,7 +1428,7 @@
    "type": "배송",
    "state": "발표전",
    "applied": "2026-11-26",
-   "ann": "2026-11-27",
+   "ann": "2026-12-01",
    "due": "2026-12-13",
    "u": "https://www.reviewplace.co.kr/pr/?id=322250",
    "ks": [
@@ -1438,151 +1438,11 @@
   },
   {
    "s": "리뷰플레이스",
-   "n": "몽고간장 쯔유(500ml) 1병+ 몽고…",
-   "type": "배송",
-   "state": "발표전",
-   "applied": "2026-11-26",
-   "ann": "2026-11-27",
-   "due": "2026-12-13",
-   "u": "https://www.reviewplace.co.kr/pr/?id=322174",
-   "ks": [
-    "리뷰플레이스:322174"
-   ],
-   "note": ""
-  },
-  {
-   "s": "리뷰플레이스",
-   "n": "실리팟 더블락 지퍼백 3종세트 1개",
-   "type": "배송",
-   "state": "발표전",
-   "applied": "2026-11-26",
-   "ann": "2026-11-27",
-   "due": "2026-12-13",
-   "u": "https://www.reviewplace.co.kr/pr/?id=322148",
-   "ks": [
-    "리뷰플레이스:322148"
-   ],
-   "note": ""
-  },
-  {
-   "s": "리뷰플레이스",
-   "n": "웰프레쉬 냉동 중국 블루베리1kg",
-   "type": "배송",
-   "state": "발표전",
-   "applied": "2026-11-26",
-   "ann": "2026-11-27",
-   "due": "2026-12-13",
-   "u": "https://www.reviewplace.co.kr/pr/?id=322135",
-   "ks": [
-    "리뷰플레이스:322135"
-   ],
-   "note": ""
-  },
-  {
-   "s": "리뷰플레이스",
-   "n": "디다츄 (1box)",
-   "type": "배송",
-   "state": "발표전",
-   "applied": "2026-11-26",
-   "ann": "2026-11-27",
-   "due": "2026-12-13",
-   "u": "https://www.reviewplace.co.kr/pr/?id=322067",
-   "ks": [
-    "리뷰플레이스:322067"
-   ],
-   "note": ""
-  },
-  {
-   "s": "리뷰플레이스",
-   "n": "헬씨디어 퍼펙트 이뮨 멀티비타민(1박스…",
-   "type": "배송",
-   "state": "발표전",
-   "applied": "2026-11-26",
-   "ann": "2026-11-27",
-   "due": "2026-12-13",
-   "u": "https://www.reviewplace.co.kr/pr/?id=322062",
-   "ks": [
-    "리뷰플레이스:322062"
-   ],
-   "note": ""
-  },
-  {
-   "s": "리뷰플레이스",
-   "n": "다정헌 생강차 50T&계피차 50T, …",
-   "type": "배송",
-   "state": "발표전",
-   "applied": "2026-11-26",
-   "ann": "2026-11-27",
-   "due": "2026-12-13",
-   "u": "https://www.reviewplace.co.kr/pr/?id=322048",
-   "ks": [
-    "리뷰플레이스:322048"
-   ],
-   "note": ""
-  },
-  {
-   "s": "리뷰플레이스",
-   "n": "(10만원 상당) 쿠자핏 6호 강화유리…",
-   "type": "배송",
-   "state": "발표전",
-   "applied": "2026-11-26",
-   "ann": "2026-11-27",
-   "due": "2026-12-13",
-   "u": "https://www.reviewplace.co.kr/pr/?id=322035",
-   "ks": [
-    "리뷰플레이스:322035"
-   ],
-   "note": ""
-  },
-  {
-   "s": "리뷰플레이스",
-   "n": "(9만원 상당) 쿠자핏 5호 강화유리 …",
-   "type": "배송",
-   "state": "발표전",
-   "applied": "2026-11-26",
-   "ann": "2026-11-27",
-   "due": "2026-12-13",
-   "u": "https://www.reviewplace.co.kr/pr/?id=322030",
-   "ks": [
-    "리뷰플레이스:322030"
-   ],
-   "note": ""
-  },
-  {
-   "s": "리뷰플레이스",
-   "n": "(12만원 상당) 쿠자핏 3개 강화유리…",
-   "type": "배송",
-   "state": "발표전",
-   "applied": "2026-11-26",
-   "ann": "2026-11-27",
-   "due": "2026-12-13",
-   "u": "https://www.reviewplace.co.kr/pr/?id=322017",
-   "ks": [
-    "리뷰플레이스:322017"
-   ],
-   "note": ""
-  },
-  {
-   "s": "리뷰플레이스",
-   "n": "(정가 8만원 상당) 버닝포뮬러 GLP…",
-   "type": "배송",
-   "state": "발표전",
-   "applied": "2026-11-26",
-   "ann": "2026-11-27",
-   "due": "2026-12-13",
-   "u": "https://www.reviewplace.co.kr/pr/?id=321970",
-   "ks": [
-    "리뷰플레이스:321970"
-   ],
-   "note": ""
-  },
-  {
-   "s": "리뷰플레이스",
    "n": "프리미엄 살치살 살치살mb9+ 200g",
    "type": "배송",
    "state": "발표전",
    "applied": "2026-11-26",
-   "ann": "2026-11-27",
+   "ann": "2026-12-01",
    "due": "2026-12-13",
    "u": "https://www.reviewplace.co.kr/pr/?id=321596",
    "ks": [
@@ -1596,39 +1456,11 @@
    "type": "배송",
    "state": "발표전",
    "applied": "2026-11-26",
-   "ann": "2026-11-27",
+   "ann": "2026-12-01",
    "due": "2026-12-13",
    "u": "https://www.reviewplace.co.kr/pr/?id=321330",
    "ks": [
     "리뷰플레이스:321330"
-   ],
-   "note": ""
-  },
-  {
-   "s": "리뷰플레이스",
-   "n": "삼대가 한돈 양념족발구이 450g / …",
-   "type": "배송",
-   "state": "발표전",
-   "applied": "2026-11-26",
-   "ann": "2026-11-27",
-   "due": "2026-12-13",
-   "u": "https://www.reviewplace.co.kr/pr/?id=322645",
-   "ks": [
-    "리뷰플레이스:322645"
-   ],
-   "note": ""
-  },
-  {
-   "s": "리뷰플레이스",
-   "n": "삼대가 슬라이스 삼겹 보쌈 200g /…",
-   "type": "배송",
-   "state": "발표전",
-   "applied": "2026-11-26",
-   "ann": "2026-11-27",
-   "due": "2026-12-13",
-   "u": "https://www.reviewplace.co.kr/pr/?id=322634",
-   "ks": [
-    "리뷰플레이스:322634"
    ],
    "note": ""
   },
@@ -3458,24 +3290,11 @@
   },
   {
    "s": "리뷰플레이스",
-   "n": "[넵티브] 하이드로캄 아쿠온 수분세럼…",
-   "type": "배송",
-   "state": "발표전",
-   "applied": "2026-11-26",
-   "ann": "",
-   "due": "",
-   "u": "https://www.reviewplace.co.kr/pr/?id=323008",
-   "ks": [
-    "리뷰플레이스:323008"
-   ]
-  },
-  {
-   "s": "리뷰플레이스",
    "n": "페이스라이너 Box",
    "type": "배송",
    "state": "발표전",
    "applied": "2026-11-26",
-   "ann": "",
+   "ann": "2026-12-21",
    "due": "",
    "u": "https://www.reviewplace.co.kr/pr/?id=321360",
    "ks": [
@@ -3484,37 +3303,11 @@
   },
   {
    "s": "리뷰플레이스",
-   "n": "오르홈 판고데기 PRO (딥블루 색상)…",
-   "type": "배송",
-   "state": "발표전",
-   "applied": "2026-11-26",
-   "ann": "",
-   "due": "",
-   "u": "https://www.reviewplace.co.kr/pr/?id=322060",
-   "ks": [
-    "리뷰플레이스:322060"
-   ]
-  },
-  {
-   "s": "리뷰플레이스",
-   "n": "오르홈 무선 고데기 (화이트 색상) *…",
-   "type": "배송",
-   "state": "발표전",
-   "applied": "2026-11-26",
-   "ann": "",
-   "due": "",
-   "u": "https://www.reviewplace.co.kr/pr/?id=322077",
-   "ks": [
-    "리뷰플레이스:322077"
-   ]
-  },
-  {
-   "s": "리뷰플레이스",
    "n": "미국산 뮤코다당 단백 콘드로이친 1200",
    "type": "배송",
    "state": "발표전",
    "applied": "2026-11-26",
-   "ann": "",
+   "ann": "2026-12-01",
    "due": "",
    "u": "https://www.reviewplace.co.kr/pr/?id=322312",
    "ks": [
@@ -3527,7 +3320,7 @@
    "type": "배송",
    "state": "발표전",
    "applied": "2026-11-26",
-   "ann": "",
+   "ann": "2026-11-30",
    "due": "",
    "u": "https://www.reviewplace.co.kr/pr/?id=322433",
    "ks": [
@@ -3540,7 +3333,7 @@
    "type": "배송",
    "state": "발표전",
    "applied": "2026-11-26",
-   "ann": "",
+   "ann": "2026-12-02",
    "due": "",
    "u": "https://www.reviewplace.co.kr/pr/?id=322537",
    "ks": [
@@ -3553,7 +3346,7 @@
    "type": "배송",
    "state": "발표전",
    "applied": "2026-11-26",
-   "ann": "",
+   "ann": "2026-12-01",
    "due": "",
    "u": "https://www.reviewplace.co.kr/pr/?id=322710",
    "ks": [
@@ -3566,7 +3359,7 @@
    "type": "배송",
    "state": "발표전",
    "applied": "2026-11-26",
-   "ann": "",
+   "ann": "2026-12-02",
    "due": "",
    "u": "https://www.reviewplace.co.kr/pr/?id=322773",
    "ks": [
@@ -3579,7 +3372,7 @@
    "type": "배송",
    "state": "발표전",
    "applied": "2026-11-26",
-   "ann": "",
+   "ann": "2026-12-01",
    "due": "",
    "u": "https://www.reviewplace.co.kr/pr/?id=322902",
    "ks": [
@@ -3592,7 +3385,7 @@
    "type": "배송",
    "state": "발표전",
    "applied": "2026-11-26",
-   "ann": "",
+   "ann": "2026-12-02",
    "due": "",
    "u": "https://www.reviewplace.co.kr/pr/?id=322954",
    "ks": [
@@ -3605,7 +3398,7 @@
    "type": "배송",
    "state": "발표전",
    "applied": "2026-11-26",
-   "ann": "",
+   "ann": "2026-12-02",
    "due": "",
    "u": "https://www.reviewplace.co.kr/pr/?id=323073",
    "ks": [
@@ -3618,7 +3411,7 @@
    "type": "배송",
    "state": "발표전",
    "applied": "2026-11-26",
-   "ann": "",
+   "ann": "2026-12-01",
    "due": "",
    "u": "https://www.reviewplace.co.kr/pr/?id=323185",
    "ks": [
@@ -3631,7 +3424,7 @@
    "type": "배송",
    "state": "발표전",
    "applied": "2026-11-26",
-   "ann": "",
+   "ann": "2026-11-30",
    "due": "",
    "u": "https://www.reviewplace.co.kr/pr/?id=323188",
    "ks": [
@@ -3640,24 +3433,11 @@
   },
   {
    "s": "리뷰플레이스",
-   "n": "프로뉴트리션 듀얼플랜 다이어트 유산균(…",
-   "type": "배송",
-   "state": "발표전",
-   "applied": "2026-11-26",
-   "ann": "",
-   "due": "",
-   "u": "https://www.reviewplace.co.kr/pr/?id=323195",
-   "ks": [
-    "리뷰플레이스:323195"
-   ]
-  },
-  {
-   "s": "리뷰플레이스",
    "n": "쿠오카 와일드 피치 핸드크림 50ml…",
    "type": "배송",
    "state": "발표전",
    "applied": "2026-11-26",
-   "ann": "",
+   "ann": "2026-11-30",
    "due": "",
    "u": "https://www.reviewplace.co.kr/pr/?id=323270",
    "ks": [
@@ -3670,7 +3450,7 @@
    "type": "배송",
    "state": "발표전",
    "applied": "2026-11-26",
-   "ann": "",
+   "ann": "2026-12-02",
    "due": "",
    "u": "https://www.reviewplace.co.kr/pr/?id=323338",
    "ks": [
@@ -3683,7 +3463,7 @@
    "type": "배송",
    "state": "발표전",
    "applied": "2026-11-26",
-   "ann": "",
+   "ann": "2026-12-03",
    "due": "",
    "u": "https://www.reviewplace.co.kr/pr/?id=323395",
    "ks": [
@@ -3696,7 +3476,7 @@
    "type": "배송",
    "state": "발표전",
    "applied": "2026-11-26",
-   "ann": "",
+   "ann": "2026-12-01",
    "due": "",
    "u": "https://www.reviewplace.co.kr/pr/?id=323481",
    "ks": [
@@ -3709,7 +3489,7 @@
    "type": "배송",
    "state": "발표전",
    "applied": "2026-11-26",
-   "ann": "",
+   "ann": "2026-12-03",
    "due": "",
    "u": "https://www.reviewplace.co.kr/pr/?id=323493",
    "ks": [
@@ -3722,7 +3502,7 @@
    "type": "배송",
    "state": "발표전",
    "applied": "2026-11-26",
-   "ann": "",
+   "ann": "2026-11-30",
    "due": "",
    "u": "https://www.seoulouba.co.kr/campaign/?c=437202",
    "ks": [
@@ -3735,7 +3515,7 @@
    "type": "배송",
    "state": "발표전",
    "applied": "2026-11-26",
-   "ann": "",
+   "ann": "2026-11-30",
    "due": "",
    "u": "https://www.seoulouba.co.kr/campaign/?c=437216",
    "ks": [
@@ -3748,7 +3528,7 @@
    "type": "배송",
    "state": "발표전",
    "applied": "2026-11-26",
-   "ann": "",
+   "ann": "2026-11-30",
    "due": "",
    "u": "https://www.seoulouba.co.kr/campaign/?c=437244",
    "ks": [
@@ -3761,7 +3541,7 @@
    "type": "배송",
    "state": "발표전",
    "applied": "2026-11-26",
-   "ann": "",
+   "ann": "2026-11-30",
    "due": "",
    "u": "https://www.seoulouba.co.kr/campaign/?c=437246",
    "ks": [
@@ -3774,7 +3554,7 @@
    "type": "배송",
    "state": "발표전",
    "applied": "2026-11-26",
-   "ann": "",
+   "ann": "2026-11-30",
    "due": "",
    "u": "https://www.seoulouba.co.kr/campaign/?c=437247",
    "ks": [
@@ -3787,7 +3567,7 @@
    "type": "배송",
    "state": "발표전",
    "applied": "2026-11-26",
-   "ann": "",
+   "ann": "2026-11-30",
    "due": "",
    "u": "https://www.seoulouba.co.kr/campaign/?c=437248",
    "ks": [
@@ -3840,5 +3620,5 @@
    "t": "부부 일정"
   }
  ],
- "synced": "2026-11-28 17:31"
+ "synced": "2026-11-28 22:35"
 }
